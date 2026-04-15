@@ -6,9 +6,11 @@ const bcrypt = require("bcrypt")
 const validarUsuario = require("./validacao/usuarios")
 const validarPost = require("./validacao/post")
 const auth = require("./auth/authLogin")
+const cors = require("cors")
 
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 function formatarData(data) {
   return new Date(data).toLocaleString("pt-BR", {
